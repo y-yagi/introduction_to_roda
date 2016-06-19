@@ -1,0 +1,11 @@
+{
+  "generator-reveal": {
+    "presentationTitle": "Introduction to Roda",
+    "packageVersion": "0.0.0",
+    "revealTheme": "white",
+    "useSass": false,
+    "deployToGithubPages": true,
+    "githubUsername": "y-yagi",
+    "githubRepository": "introduction_to_roda"
+  }
+}
