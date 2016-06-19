@@ -1,35 +1,31 @@
-## Roda
+## Sinatra
 
 ```ruby
-require 'roda'
+require 'sinatra/base'
 
-class App < Roda
-  plugin :render
-  plugin :all_verbs
+class App < Sinatra::Base
+  get '/' do
+    erb :index
+  end
 
-  route do |r|
-    r.root do
-      view :index
-    end
+  get '/artist/:id' do
+    @artist = Artist[params[:id]]
+    check_access(@artist)
+    erb :artist
+  end
 
-    r.is 'artist/:id' do |artist_id|
-      @artist = Artist[artist_id]
-      check_access(@artist)
+  post '/artist/:id' do
+    @artist = Artist[params[:id]]
+    check_access(@artist)
+    @artist.update(params[:artist])
+    redirect(request.path_info)
+  end
 
-      r.get do
-        view :artist
-      end
-
-      r.post do
-        @artist.update(r['artist'])
-        r.redirect
-      end
-
-      r.delete do
-        @artist.destroy
-        r.redirect '/'
-      end
-    end
+  delete '/artist/:id' do
+    @artist = Artist[params[:id]]
+    check_access(@artist)
+    @artist.destory
+    redirect '/'
   end
 end
 ```

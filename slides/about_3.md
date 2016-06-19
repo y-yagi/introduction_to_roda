@@ -1,32 +1,35 @@
-## Sinatra
+## Roda
 
 ```ruby
-require 'sinatra/base'
+require 'roda'
 
-class App < Sinatra::Base
-  get '/' do
-    erb :index
-  end
+class App < Roda
+  plugin :render
+  plugin :all_verbs
 
-  get '/artist/:id' do
-    @artist = Artist[params[:id]]
-    check_access(@artist)
-    erb :artist
-  end
+  route do |r|
+    r.root do
+      view :index
+    end
 
-  post '/artist/:id' do
-    @artist = Artist[params[:id]]
-    check_access(@artist)
-    @artist.update(params[:artist])
-    redirect(request.path_info)
-  end
+    r.is 'artist/:id' do |artist_id|
+      @artist = Artist[artist_id]
+      check_access(@artist)
 
-  delete '/artist/:id' do
-    @artist = Artist[params[:id]]
-    check_access(@artist)
-    @artist.destory
-    redirect '/'
+      r.get do
+        view :artist
+      end
+
+      r.post do
+        @artist.update(r['artist'])
+        r.redirect
+      end
+
+      r.delete do
+        @artist.destroy
+        r.redirect '/'
+      end
+    end
   end
 end
 ```
-[Roda: Routing Tree Web Toolkit - Why](http://roda.jeremyevans.net/why.html)から引用

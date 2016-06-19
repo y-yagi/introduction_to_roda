@@ -1,6 +1,6 @@
 ## Rendering
 
-`render` pluginを使用する事でviewのrenderを行うことが出来る
+`render` pluginを使用する
 
 ```ruby
 require "roda"
