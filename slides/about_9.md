@@ -1,7 +1,5 @@
 ## Performance
 
-#### Requests/sec
-
 ```
 Framework            Requests/sec  % from best
 ----------------------------------------------

@@ -1,14 +1,3 @@
-## File Layout(小さいアプリの場合)
+## File Layout
 
-```
-Rakefile
-app_name.rb
-assets/
-migrate/
-models.rb
-models/
-public/
-spec/
-views/
-```
-`app_name.rb`にRoda applicationを含む。名前はapplicationの名前と合わせる(`FooBar`というアプリの場合、`foo_bar.rb`)
+* Roda推奨のディレクトリ構成が[doc](http://roda.jeremyevans.net/rdoc/files/doc/conventions_rdoc.html)に記載されている

@@ -7,3 +7,4 @@
     * 会計管理用アプリ
   * [jeremyevans/kaeruera: Simple Error Tracker for Ruby](https://github.com/jeremyevans/kaeruera)
     * シンプルなエラートラッキングアプリ
+* modelやmigrateも含まれており、かつアプリ自体がシンプルなので、giftsmasを参考にするのに良さそう
