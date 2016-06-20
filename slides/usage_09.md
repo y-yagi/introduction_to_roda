@@ -1,21 +1,14 @@
-## File Layout(巨大なアプリの場合)
+## File Layout(小さいアプリの場合)
 
 ```
 Rakefile
 app_name.rb
 assets/
-helpers/
 migrate/
 models.rb
 models/
 public/
-routes/
- prefix1.rb
- prefix2.rb
 spec/
- models/
- web/
 views/
- prefix1/
- prefix2/
 ```
+`app_name.rb`にRoda applicationを含む。名前はapplicationの名前と合わせる(`FooBar`というアプリの場合、`foo_bar.rb`)

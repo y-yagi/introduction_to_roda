@@ -7,4 +7,4 @@
   * 割と新しい
   * hanami(旧lotus)よりも新しい
 * [Cuba | Microframework for web development](http://cuba.is/)からforkして開発が始められた
-  * Cubaと[Sinatra](http://www.sinatrarb.com/)それぞれからインスパイアされているとのこと
+  * Cubaと[Sinatra](http://www.sinatrarb.com/)、それぞれからインスパイアされているとのこと
